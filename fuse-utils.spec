@@ -45,7 +45,6 @@ Dostêpne s±:
 %setup -q
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
@@ -56,6 +55,7 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
