@@ -1,12 +1,12 @@
 Summary:	Fuse utilities
 Summary(pl):	Programy u¿ytkowe do fuse'a
 Name:		fuse-utils
-Version:	0.6.2
+Version:	0.7.0
 Release:	1
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://dl.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	1885e00b03d4b73919605a2004b56413
+# Source0-md5:	9689134b4be1e4ff0b077f407ec76da9
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
