@@ -1,16 +1,16 @@
 Summary:	Fuse utilities
 Summary(pl):	Programy u¿ytkowe do fuse'a
 Name:		fuse-utils
-Version:	0.6.0
+Version:	0.6.2
 Release:	1
 License:	GPL
 Group:		Applications/Emulators
-Source0:	http://www.srcf.ucam.org/~pak21/spectrum/%{name}-%{version}.tar.gz
-# Source0-md5:	5f9944c47652e6e7b08948c496099040
-URL:		http://www.srcf.ucam.org/~pak21/spectrum/fuse.html
+Source0:	http://dl.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
+# Source0-md5:	1885e00b03d4b73919605a2004b56413
+URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libspectrum-devel > 0.1.0
+BuildRequires:	libspectrum-devel >= 0.2.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
