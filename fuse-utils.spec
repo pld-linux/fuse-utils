@@ -52,6 +52,8 @@ rm -f missing
 %{__automake}
 %configure
 
+%{__make}
+
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
