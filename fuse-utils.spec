@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://www.srcf.ucam.org/~pak21/spectrum/%{name}-%{version}.tar.gz
+# Source0-md5:	5f9944c47652e6e7b08948c496099040
 URL:		http://www.srcf.ucam.org/~pak21/spectrum/fuse.html
 BuildRequires:	autoconf
 BuildRequires:	automake
