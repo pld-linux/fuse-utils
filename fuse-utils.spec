@@ -1,5 +1,5 @@
 Summary:	Fuse utilities
-Summary(pl):	Programy u¿ytkowe do fuse'a
+Summary(pl.UTF-8):   Programy uÅ¼ytkowe do fuse'a
 Name:		fuse-utils
 Version:	0.7.0
 Release:	1
@@ -27,19 +27,19 @@ The available utilities are:
 - tzxconv: do a best-guess conversion of a TZX file to a .tap file.
 - tzxlist: list the contents of a TZX file.
 
-%description -l pl
-Programy u¿ytkowe do fuse'a to kilka narzêdzi, które mog± siê przydaæ
-gdy u¿ywamy plików emulatorów ZX Spectrum. Wcze¶niej by³y
-dystrybuowane z Fuse - emulatorem ZX Spectrum, ale teraz s± niezale¿ne
-i mog± byæ u¿ywane samodzielnie.
+%description -l pl.UTF-8
+Programy uÅ¼ytkowe do fuse'a to kilka narzÄ™dzi, ktÃ³re mogÄ… siÄ™ przydaÄ‡
+gdy uÅ¼ywamy plikÃ³w emulatorÃ³w ZX Spectrum. WczeÅ›niej byÅ‚y
+dystrybuowane z Fuse - emulatorem ZX Spectrum, ale teraz sÄ… niezaleÅ¼ne
+i mogÄ… byÄ‡ uÅ¼ywane samodzielnie.
 
-Dostêpne s±:
+DostÄ™pne sÄ…:
 
-- rzxdump: wy¶wietla zawarto¶æ pliku RZX.
+- rzxdump: wyÅ›wietla zawartoÅ›Ä‡ pliku RZX.
 - rzxtool: dodaje, wyjmuje lub usuwa zanurzony snapshot z pliku RZX, a
-  tak¿e kompresuje lub dekompresuje pliki.
+  takÅ¼e kompresuje lub dekompresuje pliki.
 - tzxconv: konwersuje pliki TZX do formatu TAP.
-- tzxlist: wy¶wietla zawarto¶æ pliku TZX.
+- tzxlist: wyÅ›wietla zawartoÅ›Ä‡ pliku TZX.
 
 %prep
 %setup -q
