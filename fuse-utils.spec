@@ -1,5 +1,5 @@
 Summary:	Fuse utilities
-Summary(pl.UTF-8):   Programy użytkowe do fuse'a
+Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
 Version:	0.7.0
 Release:	1
