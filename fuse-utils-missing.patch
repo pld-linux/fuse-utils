@@ -1,0 +1,412 @@
+diff -Nru fuse-utils-0.10.0.old/converter/findpilot.h fuse-utils-0.10.0/converter/findpilot.h
+--- fuse-utils-0.10.0.old/converter/findpilot.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/converter/findpilot.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,42 @@
++/* findpilot.h: ROM loader state handling the search for the pilot pulses
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef FINDPILOT_H
++#define FINDPILOT_H
++
++#include "romloader.h"
++#include "romloaderstate.h"
++
++class findpilot : public romloaderstate {
++  public:
++    static findpilot* instance();
++    void handle_pulse( romloader* loader, double tstates,
++                       unsigned int pulse_length );
++  private:
++    findpilot() {}
++    static findpilot* unique_instance;
++};
++
++#endif /* #define FINDPILOT_H */
+diff -Nru fuse-utils-0.10.0.old/converter/findsync1.h fuse-utils-0.10.0/converter/findsync1.h
+--- fuse-utils-0.10.0.old/converter/findsync1.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/converter/findsync1.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,43 @@
++/* findsync1.h: ROM loader state searching for the sync1 pulse following
++                the initial pilot pulses
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef FINDSYNC1_H
++#define FINDSYNC1_H
++
++#include "romloader.h"
++#include "romloaderstate.h"
++
++class findsync1 : public romloaderstate {
++  public:
++    static findsync1* instance();
++    void handle_pulse( romloader* loader, double tstates,
++                       unsigned int pulse_length );
++  private:
++    findsync1() {}
++    static findsync1* unique_instance;
++};
++
++#endif /* #define FINDSYNC1_H */
+diff -Nru fuse-utils-0.10.0.old/converter/getpulse1.h fuse-utils-0.10.0/converter/getpulse1.h
+--- fuse-utils-0.10.0.old/converter/getpulse1.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/converter/getpulse1.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,43 @@
++/* getpulse1.h: ROM loader state looking for the first part of a data
++                pulse pair
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef GETPULSE1_H
++#define GETPULSE1_H
++
++#include "romloader.h"
++#include "romloaderstate.h"
++
++class getpulse1 : public romloaderstate {
++  public:
++    static getpulse1* instance();
++    void handle_pulse( romloader* loader, double tstates,
++                       unsigned int pulse_length );
++  private:
++    getpulse1() {}
++    static getpulse1* unique_instance;
++};
++
++#endif /* #define GETPULSE1_H */
+diff -Nru fuse-utils-0.10.0.old/converter/getpulse2.h fuse-utils-0.10.0/converter/getpulse2.h
+--- fuse-utils-0.10.0.old/converter/getpulse2.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/converter/getpulse2.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,48 @@
++/* getpulse2.h: ROM loader state looking for the second part of a data
++                pulse pair
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef GETPULSE2_H
++#define GETPULSE2_H
++
++#include "romloader.h"
++#include "romloaderstate.h"
++
++class getpulse2 : public romloaderstate {
++  public:
++    static getpulse2* instance();
++    void handle_pulse( romloader* loader, double tstates,
++                       unsigned int pulse_length );
++
++    void set_first_pulse( double tstates, int pulse );
++
++  private:
++    int first_pulse;
++    double first_tstates;
++    getpulse2();
++    static getpulse2* unique_instance;
++};
++
++#endif /* #define GETPULSE2_H */
+diff -Nru fuse-utils-0.10.0.old/converter/getsync2.h fuse-utils-0.10.0/converter/getsync2.h
+--- fuse-utils-0.10.0.old/converter/getsync2.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/converter/getsync2.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,48 @@
++/* getsync2.h: ROM loader state looking for the sync2 pulse following the
++               sync1 pulse
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef FINDSYNC2_H
++#define FINDSYNC2_H
++
++#include "romloader.h"
++#include "romloaderstate.h"
++
++class getsync2 : public romloaderstate {
++  public:
++    static getsync2* instance();
++    void handle_pulse( romloader* loader, double tstates,
++                       unsigned int pulse_length );
++
++    void set_first_pulse( double tstates, int pulse );
++
++  private:
++    int first_pulse;
++    double first_tstates;
++    getsync2();
++    static getsync2* unique_instance;
++};
++
++#endif /* #define FINDSYNC2_H */
+diff -Nru fuse-utils-0.10.0.old/converter/romloaderstate.h fuse-utils-0.10.0/converter/romloaderstate.h
+--- fuse-utils-0.10.0.old/converter/romloaderstate.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/converter/romloaderstate.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,39 @@
++/* romloaderstate.h: Abstract base class for ROM loader states cf the GoF
++                     State Pattern
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef ROMLOADERSTATE_H
++#define ROMLOADERSTATE_H
++
++class romloader;
++
++class romloaderstate {
++  public:
++    virtual ~romloaderstate();
++    virtual void handle_pulse( romloader* loader, double tstates,
++                               unsigned int pulse_length ) = 0;
++};
++
++#endif /* #ifndef ROMLOADERSTATE_H */
+diff -Nru fuse-utils-0.10.0.old/importer/interpolator.h fuse-utils-0.10.0/importer/interpolator.h
+--- fuse-utils-0.10.0.old/importer/interpolator.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/importer/interpolator.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,77 @@
++/* interpolator.h: Does a linear interpolation between the points in the
++                   supplied samples to a TZX-friendly 3.5MHz
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef INTERPOLATOR_H
++#define INTERPOLATOR_H
++
++#include <math.h>
++
++#include <libspectrum.h>
++
++#include "importer/soundfile.h"
++
++class interpolator {
++public:
++  interpolator( libspectrum_byte *samples, size_t samples_length, double rate,
++                double source_rate ) :
++    source_sample_rate(source_rate),
++    sample_rate(rate),
++    pulses(samples),
++    source_length(samples_length) {
++      length = floor( source_length * source_sample_rate/sample_rate );
++    }
++
++  double get_length() { return length; }
++
++  libspectrum_byte get_sample( double tstates ) {
++    // convert tstates to samples offsets
++    double tstate_offset = tstates * sample_rate/source_sample_rate;
++    size_t offset1 = (size_t)floor(tstate_offset);
++    size_t offset2 = (size_t)ceil(tstate_offset);
++
++    double distance = tstate_offset - offset1;
++
++    // get samples
++    libspectrum_byte sample1 = pulses[offset1];
++    if( offset2 >= source_length ) offset2 = source_length - 1;
++    libspectrum_byte sample2 = pulses[offset2];
++
++    // if we have two samples, allocate final value based on
++    // distance between both samples
++    int difference = sample2 - sample1;
++
++    return (libspectrum_byte) (sample1 + (difference * distance));
++  }
++
++private:
++  double source_sample_rate;
++  double sample_rate;
++  double length;
++  libspectrum_byte *pulses;
++  size_t source_length;
++};
++
++#endif /* #define INTERPOLATOR_H */
+diff -Nru fuse-utils-0.10.0.old/importer/trigger.h fuse-utils-0.10.0/importer/trigger.h
+--- fuse-utils-0.10.0.old/importer/trigger.h	1970-01-01 01:00:00.000000000 +0100
++++ fuse-utils-0.10.0/importer/trigger.h	2008-12-05 21:07:11.000000000 +0100
+@@ -0,0 +1,40 @@
++/* trigger.h: Abstract class for detecting the transition between a level 0
++              and 1
++   Copyright (c) 2008 Fredrick Meunier
++
++   $Id$
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License along
++   with this program; if not, write to the Free Software Foundation, Inc.,
++   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++   Author contact information:
++
++   E-mail: fredm@spamcop.net
++
++*/
++
++#ifndef TRIGGER_H
++#define TRIGGER_H
++
++#include <libspectrum.h>
++
++class trigger {
++  public:
++    trigger() {};
++    virtual ~trigger();
++
++    virtual libspectrum_byte get_level(libspectrum_byte b) = 0;
++};
++
++#endif /* #ifndef TRIGGER_H */
