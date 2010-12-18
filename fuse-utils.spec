@@ -8,12 +8,14 @@ Group:		Applications/Emulators
 Source0:	http://download.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
 # Source0-md5:	ae3821d721a2744a5f285177c4083098
 URL:		http://fuse-emulator.sourceforge.net/
-BuildRequires:	audiofile-devel
+BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libspectrum-devel >= 1.0.0
+BuildRequires:	pkgconfig
 Requires:	libspectrum >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -70,5 +72,32 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/audio2tape
+%attr(755,root,root) %{_bindir}/createhdf
+%attr(755,root,root) %{_bindir}/listbasic
+%attr(755,root,root) %{_bindir}/profile2map
+%attr(755,root,root) %{_bindir}/raw2hdf
+%attr(755,root,root) %{_bindir}/rzxcheck
+%attr(755,root,root) %{_bindir}/rzxdump
+%attr(755,root,root) %{_bindir}/rzxtool
+%attr(755,root,root) %{_bindir}/scl2trd
+%attr(755,root,root) %{_bindir}/snap2tzx
+%attr(755,root,root) %{_bindir}/snapconv
+%attr(755,root,root) %{_bindir}/tape2wav
+%attr(755,root,root) %{_bindir}/tapeconv
+%attr(755,root,root) %{_bindir}/tzxlist
+%{_mandir}/man1/audio2tape.1*
+%{_mandir}/man1/createhdf.1*
+%{_mandir}/man1/fuse-utils.1*
+%{_mandir}/man1/listbasic.1*
+%{_mandir}/man1/profile2map.1*
+%{_mandir}/man1/raw2hdf.1*
+%{_mandir}/man1/rzxcheck.1*
+%{_mandir}/man1/rzxdump.1*
+%{_mandir}/man1/rzxtool.1*
+%{_mandir}/man1/scl2trd.1*
+%{_mandir}/man1/snap2tzx.1*
+%{_mandir}/man1/snapconv.1*
+%{_mandir}/man1/tape2wav.1*
+%{_mandir}/man1/tapeconv.1*
+%{_mandir}/man1/tzxlist.1*
