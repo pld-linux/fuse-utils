@@ -2,19 +2,20 @@ Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
 Version:	1.0.0
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/Emulators
-Source0:	http://download.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
 # Source0-md5:	ae3821d721a2744a5f285177c4083098
+Patch0:		audiofile-0.3.patch
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	libspectrum-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	libspectrum-devel >= 1.0.0
 BuildRequires:	pkgconfig
 Requires:	libspectrum >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,6 +50,7 @@ Dostępne są:
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
