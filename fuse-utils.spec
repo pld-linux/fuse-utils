@@ -1,19 +1,19 @@
 Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
-Version:	1.0.0
-Release:	3
+Version:	1.1.0
+Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	ae3821d721a2744a5f285177c4083098
-Patch0:		audiofile-0.3.patch
+# Source0-md5:	22185ca0959393bc4d0d323e44678dc4
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	ffmpeg-devel >= 1.0.1
 BuildRequires:	glib2-devel >= 2.0.0
-BuildRequires:	libspectrum-devel >= 1.0.0
+BuildRequires:	libspectrum-devel >= 1.1.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -50,7 +50,6 @@ Dostępne są:
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -76,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/audio2tape
 %attr(755,root,root) %{_bindir}/createhdf
+%attr(755,root,root) %{_bindir}/fmfconv
 %attr(755,root,root) %{_bindir}/listbasic
 %attr(755,root,root) %{_bindir}/profile2map
 %attr(755,root,root) %{_bindir}/raw2hdf
@@ -90,6 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/tzxlist
 %{_mandir}/man1/audio2tape.1*
 %{_mandir}/man1/createhdf.1*
+%{_mandir}/man1/fmfconv.1*
 %{_mandir}/man1/fuse-utils.1*
 %{_mandir}/man1/listbasic.1*
 %{_mandir}/man1/profile2map.1*
