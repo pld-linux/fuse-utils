@@ -9,14 +9,16 @@ Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.g
 # Source0-md5:	22185ca0959393bc4d0d323e44678dc4
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	ffmpeg-devel >= 1.0.1
 BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	libgcrypt-devel
 BuildRequires:	libspectrum-devel >= 1.1.0
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
+BuildRequires:	zlib-devel
 Requires:	libspectrum >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
