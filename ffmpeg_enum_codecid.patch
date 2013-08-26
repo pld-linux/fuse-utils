@@ -1,0 +1,29 @@
+--- fuse-utils-1.1.1/fmfconv_ff.c.orig	2013-08-26 21:45:51.749946717 +0200
++++ fuse-utils-1.1.1/fmfconv_ff.c	2013-08-26 21:46:33.397257449 +0200
+@@ -224,7 +224,7 @@
+  */
+ 
+ static int
+-add_audio_stream( enum CodecID codec_id, int freq, int stereo )
++add_audio_stream( enum AVCodecID codec_id, int freq, int stereo )
+ {
+   AVCodecContext *c;
+ 
+@@ -440,7 +440,7 @@
+ 
+ /* add a video output stream */
+ static int
+-add_video_stream( enum CodecID codec_id, int w, int h, int timing )
++add_video_stream( enum AVCodecID codec_id, int w, int h, int timing )
+ {
+   AVCodecContext *c;
+ 
+@@ -674,7 +674,7 @@
+ {
+ 
+   AVCodec *ac, *vc;
+-  enum CodecID acodec, vcodec;
++  enum AVCodecID acodec, vcodec;
+ 
+   ff_picture = NULL;
+   ff_tmp_picture = NULL;
