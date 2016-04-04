@@ -2,12 +2,14 @@ Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
 Version:	1.1.1
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
 # Source0-md5:	76832afc4fc42b3ec5f38cdd4e764170
 Patch0:		ffmpeg_enum_codecid.patch
+Patch1:		ffmpeg3.patch
+Patch2:		fix-progname.patch
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
@@ -55,6 +57,8 @@ Dostępne są:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
