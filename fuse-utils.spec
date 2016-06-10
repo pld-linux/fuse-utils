@@ -1,15 +1,12 @@
 Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
-Version:	1.1.1
-Release:	5
+Version:	1.2.0
+Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	76832afc4fc42b3ec5f38cdd4e764170
-Patch0:		ffmpeg_enum_codecid.patch
-Patch1:		ffmpeg3.patch
-Patch2:		fix-progname.patch
+# Source0-md5:	106505b8542fcdc02cc2b3c06d64a71f
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
@@ -18,7 +15,7 @@ BuildRequires:	ffmpeg-devel >= 1.0.1
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
-BuildRequires:	libspectrum-devel >= 1.1.1
+BuildRequires:	libspectrum-devel >= 1.2.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
@@ -56,9 +53,6 @@ Dostępne są:
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -94,6 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/scl2trd
 %attr(755,root,root) %{_bindir}/snap2tzx
 %attr(755,root,root) %{_bindir}/snapconv
+%attr(755,root,root) %{_bindir}/tape2pulses
 %attr(755,root,root) %{_bindir}/tape2wav
 %attr(755,root,root) %{_bindir}/tapeconv
 %attr(755,root,root) %{_bindir}/tzxlist
@@ -110,6 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/scl2trd.1*
 %{_mandir}/man1/snap2tzx.1*
 %{_mandir}/man1/snapconv.1*
+%{_mandir}/man1/tape2pulses.1*
 %{_mandir}/man1/tape2wav.1*
 %{_mandir}/man1/tapeconv.1*
 %{_mandir}/man1/tzxlist.1*
