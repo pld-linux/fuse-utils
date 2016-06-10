@@ -11,7 +11,6 @@ URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	ffmpeg-devel >= 1.0.1
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
