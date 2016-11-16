@@ -21,7 +21,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
-Requires:	libspectrum >= 1.2.0
+Requires:	libspectrum >= 1.3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
