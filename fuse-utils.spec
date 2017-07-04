@@ -1,12 +1,12 @@
 Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
-Version:	1.3.1
+Version:	1.3.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	df5542ba7c414aa61f15508e4eb102e1
+# Source0-md5:	f307d5e2584aef08235571a27fb410bc
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
@@ -16,12 +16,12 @@ BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	libspectrum-devel >= 1.3.1
+BuildRequires:	libspectrum-devel >= 1.3.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
-Requires:	libspectrum >= 1.3.1
+Requires:	libspectrum >= 1.3.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -63,13 +63,13 @@ Dostępne są:
 %{__automake}
 %configure
 
-%{__make}
+%{__make} V=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT V=1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
