@@ -61,15 +61,16 @@ Dostępne są:
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 
-%{__make} V=1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT V=1
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
