@@ -1,13 +1,13 @@
-%define		libspectrumver	1.4.0
+%define		libspectrumver	1.4.1
 Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
-Version:	1.3.4
+Version:	1.3.5
 Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	e8e2b039cbbfc4005468dedd7afe7501
+# Source0-md5:	efa1c102a9f6f3f4abcbcd2e9603d322
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
