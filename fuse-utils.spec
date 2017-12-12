@@ -2,12 +2,12 @@
 Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
-Version:	1.3.5
+Version:	1.4.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	efa1c102a9f6f3f4abcbcd2e9603d322
+# Source0-md5:	d8b136650ef227e34f804c04a3b2492c
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
@@ -91,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/scl2trd
 %attr(755,root,root) %{_bindir}/snap2tzx
 %attr(755,root,root) %{_bindir}/snapconv
+%attr(755,root,root) %{_bindir}/snapdump
 %attr(755,root,root) %{_bindir}/tape2pulses
 %attr(755,root,root) %{_bindir}/tape2wav
 %attr(755,root,root) %{_bindir}/tapeconv
@@ -108,6 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/scl2trd.1*
 %{_mandir}/man1/snap2tzx.1*
 %{_mandir}/man1/snapconv.1*
+%{_mandir}/man1/snapdump.1*
 %{_mandir}/man1/tape2pulses.1*
 %{_mandir}/man1/tape2wav.1*
 %{_mandir}/man1/tapeconv.1*
