@@ -1,28 +1,28 @@
-%define		libspectrumver	1.4.2
+%define		libspectrum_ver	1.4.3
 Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
-Version:	1.4.1
+Version:	1.4.3
 Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
-# Source0-md5:	fa8ffd6afcc0a926dd6dfbd48fb5a0f3
+# Source0-md5:	b1cbe93b174e83f0c8fac004d328ea70
 URL:		http://fuse-emulator.sourceforge.net/
 BuildRequires:	audiofile-devel >= 0.2.3
 BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	libspectrum-devel >= %{libspectrumver}
+BuildRequires:	libspectrum-devel >= %{libspectrum_ver}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
-Requires:	libspectrum >= %{libspectrumver}
+Requires:	libspectrum >= %{libspectrum_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
