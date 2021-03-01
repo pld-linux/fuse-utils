@@ -1,9 +1,9 @@
-%define		libspectrum_ver	1.4.3
+%define		libspectrum_ver	1.5.0
 Summary:	Fuse utilities
 Summary(pl.UTF-8):	Programy użytkowe do fuse'a
 Name:		fuse-utils
 Version:	1.4.3
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://downloads.sourceforge.net/fuse-emulator/%{name}-%{version}.tar.gz
