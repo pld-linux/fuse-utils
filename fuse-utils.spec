@@ -36,7 +36,6 @@ The available utilities are:
 - rzxdump: list the contents of an RZX input recording file.
 - rzxtool: add, extract or remove the embedded snapshot from an RZX
   file, or compress or uncompress the file.
-- tzxconv: do a best-guess conversion of a TZX file to a .tap file.
 - tzxlist: list the contents of a TZX file.
 
 %description -l pl.UTF-8
@@ -50,7 +49,6 @@ Dostępne są:
 - rzxdump: wyświetla zawartość pliku RZX.
 - rzxtool: dodaje, wyjmuje lub usuwa zanurzony snapshot z pliku RZX, a
   także kompresuje lub dekompresuje pliki.
-- tzxconv: konwersuje pliki TZX do formatu TAP.
 - tzxlist: wyświetla zawartość pliku TZX.
 
 %prep
